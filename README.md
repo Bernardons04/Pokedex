@@ -6,8 +6,6 @@ Readme.Github
 
 ### Esse projeto se trata de uma Pokédex.
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
-
 ## 🎯Proposta do projeto
 
 ### Colocar em prática os meus conhecimentos sobre consumo de API.
