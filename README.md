@@ -5,6 +5,7 @@ Readme.Github
 ## 📱Descrição do projeto
 
 ### Esse projeto se trata de uma Pokédex.
+<img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 
 ## 🎯Proposta do projeto
 
