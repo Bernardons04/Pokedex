@@ -52,7 +52,7 @@ const mostrarPokemon = async (pokemon) => {
     }
 }
 
-input.addEventListener("keydown", (e) => {
+input.addEventListener("keyup", (e) => {
     if(e.keyCode === 13) {
         e.preventDefault();
         mostrarPokemon(input.value);
