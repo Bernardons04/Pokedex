@@ -1,5 +1,6 @@
 const imgPokemon = document.querySelector(".pokemon")
 const input = document.querySelector(".inputSearch")
+const form = document.querySelector(".formulario")
 const numberPoke = document.querySelector(".numberPoke")
 const namePoke = document.querySelector(".pokeName")
 const btnPrev = document.querySelector(".btnPrev")
@@ -9,17 +10,19 @@ let NumeroPokeAtual = 1;
 
 const fetchPokemon = async (pokemon) => {
     const apiResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    const data = await apiResponse.json();
-    return data;
+    if (apiResponse.status === 200) {
+        const data = await apiResponse.json();
+        return data;
+    }
 }
 
 const mostrarPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon);
-    const sprite = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    
     if (data) {
         namePoke.innerHTML = data.name
         numberPoke.innerHTML = data.id
-        imgPokemon.src = sprite;
+        imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
         if (numberPoke.innerHTML < 650) {
             imgPokemon.style.height = '18%';
             imgPokemon.style.bottom = '55%';
@@ -52,11 +55,9 @@ const mostrarPokemon = async (pokemon) => {
     }
 }
 
-input.addEventListener("keydown", (e) => {
-    if(e.keyCode === 13) {
-        e.preventDefault();
-        mostrarPokemon(input.value);
-    }
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    mostrarPokemon(input.value);
 })
 
 btnPrev.addEventListener("click", () => {
