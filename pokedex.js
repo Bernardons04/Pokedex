@@ -57,7 +57,7 @@ const mostrarPokemon = async (pokemon) => {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    mostrarPokemon(input.value);
+    mostrarPokemon(input.value.toLowerCase());
 })
 
 btnPrev.addEventListener("click", () => {
