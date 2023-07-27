@@ -52,7 +52,7 @@ const mostrarPokemon = async (pokemon) => {
     }
 }
 
-input.addEventListener("keydown", (e) => {
+input.addEventListener("submit", (e) => {
     if(e.keyCode === 13) {
         e.preventDefault();
         mostrarPokemon(input.value);
@@ -67,8 +67,8 @@ btnPrev.addEventListener("click", () => {
 })
 
 btnNext.addEventListener("click", () => {
-        NumeroPokeAtual += 1;
-        mostrarPokemon(NumeroPokeAtual);
+    NumeroPokeAtual += 1;
+    mostrarPokemon(NumeroPokeAtual);
 })
 
 mostrarPokemon(NumeroPokeAtual);
