@@ -22,6 +22,7 @@ const mostrarPokemon = async (pokemon) => {
     if (data) {
         namePoke.innerHTML = data.name
         numberPoke.innerHTML = data.id
+        imgPokemon.style.display = 'block';
         imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
         if (numberPoke.innerHTML < 650) {
             imgPokemon.style.height = '18%';
