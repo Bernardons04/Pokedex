@@ -17,12 +17,10 @@ const fetchPokemon = async (pokemon) => {
 }
 
 const mostrarPokemon = async (pokemon) => {
-    const data = await fetchPokemon(pokemon);
-    
+    const data = await fetchPokemon(pokemon);  
     if (data) {
         namePoke.innerHTML = data.name
         numberPoke.innerHTML = data.id
-        imgPokemon.style.display = 'block';
         imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
         if (numberPoke.innerHTML < 650) {
             imgPokemon.style.height = '18%';
@@ -50,7 +48,7 @@ const mostrarPokemon = async (pokemon) => {
         input.value = '';
         NumeroPokeAtual = data.id;
     } else {
-        imgPokemon.style.display = 'none';
+        imgPokemon.src = ""
         namePoke.innerHTML = 'Not found :c';
         numberPoke.innerHTML = '';
     }
